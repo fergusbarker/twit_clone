@@ -61,5 +61,12 @@ module TwitClone
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    if Rails.env.test?
+      initializer :after => :intialize_dependency_mechanism do
+        # Work around for Spork with rails.
+        ActiveSupport::Dependencies.mechanism = :load
+      end
+    end
   end
 end
