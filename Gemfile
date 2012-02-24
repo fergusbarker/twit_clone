@@ -30,6 +30,7 @@ end
 group :testing do
   gem 'rspec'
   gem 'webrat'
+  gem 'spork'
 end
   
 
