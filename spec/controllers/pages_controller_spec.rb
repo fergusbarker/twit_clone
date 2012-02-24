@@ -9,12 +9,25 @@ describe PagesController do
       get 'home'
       response.should be_success
     end
+
+    it "should have the right title" do 
+      get 'home'
+      response.should have_selector("title",
+                        :content => "Ruby on Rails Tutorial Twitter Clone | Home")
+    end
   end
 
   describe "GET 'contact'" do
     it "returns http success" do
       get 'contact'
       response.should be_success
+    end
+
+
+    it "should have the right title" do 
+      get 'contact'
+      response.should have_selector("title",
+                        :content => "Ruby on Rails Tutorial Twitter Clone | Contact")
     end
   end
 
@@ -23,6 +36,13 @@ describe PagesController do
       get 'about'
       response.should be_success
     end
+
+    it "should have the right title" do 
+      get 'about'
+      response.should have_selector("title",
+                        :content => "Ruby on Rails Tutorial Twitter Clone | About")
+    end
   end
+
 
 end
