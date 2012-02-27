@@ -5,13 +5,14 @@ require 'rspec/rails'
 require 'rspec/autorun'
 
 # spork as testing server
+require 'rubygems'
 require 'spork'
 
-Spork.prefork do
-  ENV["RAILS_ENV"] ||= 'test'
-  unless defined?(Rails)
-    require File.dirname(__FILE__) + "/../config/environment"
-  end
+#Spork.prefork do
+#  ENV["RAILS_ENV"] ||= 'test'
+#  unless defined?(Rails)
+#    require File.dirname(__FILE__) + "/../config/environment"
+#  end
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -40,7 +41,6 @@ RSpec.configure do |config|
   config.infer_base_class_for_anonymous_controllers = false
 
   ActiveSupport::Dependencies.clear
-end
 end
 
 Spork.each_run do
