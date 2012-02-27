@@ -4,6 +4,12 @@ describe PagesController do
 
   render_views
 
+  before(:each) do
+    # Fixes out the base title
+    @base_title = "Ruby on Rails Tutorial Twitter Clone"
+
+  end
+
   describe "GET 'home'" do
     it "returns http success" do
       get 'home'
@@ -13,7 +19,7 @@ describe PagesController do
     it "should have the right title" do 
       get 'home'
       response.should have_selector("title",
-                        :content => "Ruby on Rails Tutorial Twitter Clone | Home")
+                        :content => @base_title + " | Home")
     end
   end
 
@@ -27,7 +33,7 @@ describe PagesController do
     it "should have the right title" do 
       get 'contact'
       response.should have_selector("title",
-                        :content => "Ruby on Rails Tutorial Twitter Clone | Contact")
+                        :content => @base_title + " | Contact")
     end
   end
 
@@ -40,7 +46,7 @@ describe PagesController do
     it "should have the right title" do 
       get 'about'
       response.should have_selector("title",
-                        :content => "Ruby on Rails Tutorial Twitter Clone | About")
+                        :content => @base_title + " | About")
     end
   end
 
