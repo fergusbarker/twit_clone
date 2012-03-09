@@ -8,7 +8,6 @@ set :scm, :git
 set :deploy_to, "/var/rails"
 set :user, "serv"
 set :password, "5469726f6e"
-set :deploy_via, :remote_cache
 
 ssh_options[:port] = 223
 
