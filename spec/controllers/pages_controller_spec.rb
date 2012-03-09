@@ -10,6 +10,19 @@ describe PagesController do
 
   end
 
+  describe "GET 'help'" do
+    it "returns http success" do
+      get 'home'
+      response.should be_success
+    end
+
+    it "should have the right title" do
+      get 'help'
+      response.should have_selector("title",
+                        :content => @base_title + " | Help")
+    end
+  end
+
   describe "GET 'home'" do
     it "returns http success" do
       get 'home'
