@@ -5,7 +5,7 @@ set :repository,  "git@github.com:fergusbarker/twit_clone.git"
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-set :deploy_to, "/var/rails"
+set :deploy_to, "/home/serv/rails/twit_clone"
 set :user, "serv"
 set :password, "5469726f6e"
 set :branch, "master"
