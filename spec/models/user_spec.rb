@@ -15,4 +15,15 @@ describe User do
     no_user_name.should_not be_valid
   end
 
+  it "should require an email" do
+    no_email = User.new(@attr.merge(:email => ""))
+    no_email.should_not be_valid
+  end
+
+  it "should reject overly long names" do
+    long_name = "a" * 51
+    too_long_user = User.new(@attr.merge(:name => long_name))
+    too_long_user.should_not be_valid
+  end
+
 end
